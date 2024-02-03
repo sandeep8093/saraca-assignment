@@ -18,7 +18,12 @@ mongoose.connect(process.env.DB_URL,{
     console.log(err)
 });
 
+app.get('/', function (req, res) {
+    res.send('hello world')
+})
+
 app.use('/api',require('./src/routes/route'))
+
 app.listen(PORT,()=>{
     console.log(`Server Running on port: ${PORT}`)
 })
